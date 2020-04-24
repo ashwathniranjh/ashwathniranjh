@@ -63,6 +63,20 @@ body{
   left:573px;
   float:right;
 }
+
+#quit
+{
+  pointer-events: auto;
+  display:none;
+  width:130px;
+  height:65px;
+  border-radius: 15%;
+  position:absolute;
+  top:150px;
+  left:573px;
+  float:right;
+}
+
 h1{
   position:absolute;
   display:block;
