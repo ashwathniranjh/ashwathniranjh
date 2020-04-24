@@ -17,6 +17,17 @@ var seconds = 0, mseconds = 0,interval,interval2,elapsedTime=0,k=0;
       }
     }
 
+function quit(s)
+{
+  s.style.display = "none";
+  document.getElementById("restart").style.display = "block";
+  var ob = document.getElementsByClassName("button");
+  for( var i=0;i<ob.length;i++)
+  {
+    ob[i].setAttribute('style',"visibility:hidden;");
+  }
+  Besttimes(0);
+}
 
 
   function startTimer(s)
@@ -49,10 +60,10 @@ var seconds = 0, mseconds = 0,interval,interval2,elapsedTime=0,k=0;
 
 function Besttimes(abc)
 {
+    clearInterval(interval);
     if(abc!=0)
     {
-    clearInterval(interval);
-  for(var i=0;i<5;i++)
+    for(var i=0;i<5;i++)
    {
     if(btret[i]==0)
     {
@@ -119,6 +130,7 @@ function gang()
 {
   console.log('HELLO');
   clearInterval(interval2);
+  shuffle();
   var startTime = Date.now();
 
 
@@ -174,6 +186,7 @@ function change(s)
       s.style.pointerEvents="none";
       if(s.value==40)
       {
+        document.getElementById("quit").style.display = "none";
         Besttimes((elapsedTime / 1000).toFixed(3));
       }
       document.getElementById("b" + (ind[a++]+1)).style.pointerEvents = "auto";
